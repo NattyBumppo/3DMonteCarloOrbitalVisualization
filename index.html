@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Optimal Trajectory Visualization - 3D</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="Cache-control" content="NO-CACHE">
+        <style>
+            body {
+                color: #cccccc;
+                background-color: #aaaaaa;
+                margin: 0px;
+                overflow: hidden;
+            }
+            #info {
+                position: absolute;
+                top: 0px;
+                width: 100%;
+                padding: 5px;
+                font-family: Monospace;
+                font-size: 13px;
+                text-align: center;
+                font-weight: bold;
+            }
+            a {
+                color: #fff;
+            }
+        </style>
+    </head>
+
+    <body onload="pageLoadComplete()">
+        <noscript>To use this site, please enable JavaScript.</noscript>
+        
+        <div id="info">Current Time: <div id='timeDisplay'>0</div> <input id="timeSlider" type="range" min="0" max="1" step="1" value="0" onchange="updateViaSlider('timeSlider', 'timeDisplay')"/ style='width: 800px' list='pointItems'><div><button id='playButton' onclick='toggleAnimation()'>Play</button></div></div>
+
+<div id="container">
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.csv.min.js"></script>
+        <script type="text/javascript" src="js/three.js"></script>
+        <script type="text/javascript" src="js/shaderLoader.js"></script>
+        <script src="js/OrbitControls.js"></script>
+
+        <script data-src="shaders/simple.vert" type="x-shader/x-vertex" data-name="point"> </script>
+        <script data-src="shaders/simple.frag" type="x-shader/x-fragment" data-name="point"></script>
+
+        <script type="text/javascript" src="js/Detector.js"></script>
+        <script type="text/javascript" src="js/load_monte_carlo.js"></script>
+        <script type="text/javascript" src="js/viz_monte_carlo.js"></script>
+</div>
+    </body>
+
+</html>
